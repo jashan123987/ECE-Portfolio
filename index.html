@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio - Early Childhood Education Contexts</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for a professional look */
+        :root {
+            --primary-color: #0d47a1; /* Dark Blue */
+            --accent-color: #ff9800; /* Orange/Amber */
+            --bg-color: #f8fafc; /* Slate 50 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+        }
+        .nav-link {
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 9999px;
+        }
+        .nav-link:hover:not(.active) {
+            color: var(--accent-color);
+        }
+        .section-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .content-heading {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid #e0e7ff; /* Indigo 100 */
+            padding-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Header & Navigation Bar -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center py-4">
+                <!-- Logo/Title -->
+                <h1 id="home" class="text-2xl font-extrabold text-gray-800 tracking-tight mb-4 md:mb-0">
+                    ECE Contexts Portfolio
+                </h1>
+
+                <!-- Navigation Tabs -->
+                <nav class="flex flex-wrap justify-center space-x-2 sm:space-x-4 text-sm font-medium text-gray-500 border-b md:border-b-0 w-full md:w-auto" role="tablist">
+                    <div class="nav-link active" data-tab="home" role="tab">Home</div>
+                    <div class="nav-link" data-tab="tab1" role="tab">Poverty</div>
+                    <div class="nav-link" data-tab="tab2" role="tab">Out-of-Home Care</div>
+                    <div class="nav-link" data-tab="tab3" role="tab">First Nations</div>
+                    <div class="nav-link" data-tab="tab4" role="tab">Parental Mental Illness</div>
+                    <div class="nav-link" data-tab="tab5" role="tab">Natural Disasters</div>
+                    <div class="nav-link" data-tab="tab6" role="tab">References</div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Home Page Content -->
+        <section id="content-home" class="tab-content">
+            <div class="section-card p-8 text-center bg-gray-50 border-t-4 border-b-4 border-blue-500">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Welcome to the ECE Contexts Portfolio</h2>
+                <!-- No specific image for Home, as the background card serves the purpose -->
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    This portfolio explores key social and economic contexts impacting children and families in Early Childhood Education (ECE) settings, providing analysis, policy responses, and strategies for best practice.
+                </p>
+                <p class="text-lg text-gray-700 font-medium">
+                    Please use the navigation bar above to explore the five detailed contexts and the references.
+                </p>
+
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Shortcut Cards -->
+                    <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02] cursor-pointer" onclick="showTab('tab1')">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Economic Context: Poverty</h3>
+                        <p class="text-gray-500">Understanding financial strain and social exclusion in ECE.</p>
+                    </div>
+                    <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02] cursor-pointer" onclick="showTab('tab2')">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Social Context: Out-of-Home Care</h3>
+                        <p class="text-gray-500">Supporting children through trauma-informed and stable ECE practices.</p>
+                    </div>
+                    <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02] cursor-pointer" onclick="showTab('tab3')">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Cultural Context: First Nations Families</h3>
+                        <p class="text-gray-500">Embedding cultural safety and anti-bias curriculum.</p>
+                    </div>
+                    <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02] cursor-pointer" onclick="showTab('tab4')">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Health & Wellbeing: Parental Mental Illness</h3>
+                        <p class="text-gray-500">Focusing on secure attachment and specialized referrals.</p>
+                    </div>
+                    <div class="p-6 bg-white border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02] cursor-pointer" onclick="showTab('tab5')">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2">Crisis & Emergency: Natural Disasters</h3>
+                        <p class="text-gray-500">Disaster preparedness and restoration of routine post-crisis.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 1: Economic Context | Poverty -->
+        <section id="content-tab1" class="tab-content hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-accent-color pb-2">TAB 1: Economic Context | Poverty</h2>
+            <!-- Image for Tab 1: Poverty -->
+            <img src="https://www.un.org/sites/un2.un.org/files/styles/large-article-image-style-16-9/public/field/image/children-uttar_pradesh-india.jpg" alt="Image representing poverty and financial strain" class="w-full h-auto object-cover rounded-lg mb-6 shadow-md border-2 border-red-200">
+            <!-- End Image -->
+
+            <div class="space-y-6">
+                <!-- Understanding the context -->
+                <div class="section-card">
+                    <h3 class="content-heading">Understanding the context</h3>
+                    <p class="text-gray-700 mb-4">Poverty in children suggests that they lack the basic resources needed to live a sound life in the Australian Society. These resources include but are not limited to Money, Housing, Food, Clothing and most importantly education and other Healthcare services. Poverty leads to limited or no access to such resources for children and/or their families.</p>
+                    <p class="text-gray-700 mb-4">Children facing poverty issues in families often suffer developmental gaps even before the age of 2 years. This makes early intervention a necessary for them. Poverty is also linked to lower school readiness in children. </p>
+                    <p class="text-gray-700 mb-2">The sociological theories related to poverty are namely <strong>“Social Exclusion”</strong> and <strong>“Status Syndrome”</strong>. The former states that poverty is related to lack of connectedness to the community and its services and not just lack of money. While the latter states that poverty leads to increased stress and health issues in the family and the children, as they have very less control over their lives. (Grace, Bowes, & Woodrow, 2022)</p>
+                    <p class="text-sm italic text-gray-500 mt-4">As per data, 1 in 6 Australian children live below the poverty line. (Contact, 2024)</p>
+                </div>
+
+                <!-- Impact on Children & Families -->
+                <div class="section-card">
+                    <h3 class="content-heading">Impact on Children & Families</h3>
+                    <p class="text-gray-700 mb-4">Poverty impacts the cognitive development in children by limiting their access to paid ECE, quality learning resources and extra-curricular activities. These children are often found to face problems like poor vocabulary and poor nutrition amongst the many other problems that they might face.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Families that fall below the poverty line often have a stressful environment at home. Children living in these households may experience shame or stigma owing to their social standing.</li>
+                        <li>The risk of mental health issues for parents is often found to be high in such families and it can also lead to a strained parent-child relationship.</li>
+                    </ul>
+                </div>
+
+                <!-- Social Policy & Australian Responses -->
+                <div class="section-card">
+                    <h3 class="content-heading">Social Policy & Australian Responses</h3>
+                    <p class="text-gray-700 mb-4">Australia doesn’t currently have a dedicated policy related to Child Poverty but other policies like FTB and CCS aim to reduce financial strain on poor families.</p>
+                    <p class="text-gray-700 mb-4">Current Australian policies focus on alleviating hardship rather than focusing on eliminating the root cause of the problem which includes low wages, high housing cost etc. (Grace, Bowes, & Woodrow, 2022)</p>
+                    <p class="text-sm italic text-gray-500 mt-4">As per data, approximately 7,61,000 Australian children lived in poor conditions in the year 2019-2020. (Contact, 2024)</p>
+                </div>
+
+                <!-- Strategies for Practice -->
+                <div class="section-card">
+                    <h3 class="content-heading">Strategies for Practice</h3>
+                    <p class="text-gray-700 mb-4">The 5 strategies that can be adopted include the following:</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Promotion of Social Inclusion:</strong> Steps should be taken to create a non-judgemental space where families from different social standings can feel connected.</li>
+                        <li><strong>Universal Access Support:</strong> Those capable should help eligible families apply for CCS.</li>
+                        <li><strong>Basic Needs Hub:</strong> Daily need items, spare uniforms, toiletries should be stocked for families in need.</li>
+                        <li><strong>Strength Based Approach:</strong> There should be programs that should aim to build existing skills of such families.</li>
+                        <li><strong>Referral Pathways:</strong> Direct referral assistance should be provided to such families wherever possible.</li>
+                    </ul>
+                </div>
+
+                <!-- Community & Professional Partnerships -->
+                <div class="section-card">
+                    <h3 class="content-heading">Community & Professional Partnerships</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>ACOSS:</strong> This body advocates for national policy changes. Educators can share their feedback with such bodies to support policies.</li>
+                        <li><strong>St. Vincent de Paul Society:</strong> This body provides emergency assistance to families in need. Collaboration with such bodies can help families to get aid in times of need.</li>
+                        <li><strong>Local Community Centers:</strong> These centers offer low-cost playgroups and/or courses. ECE staff can be hosted at such centers. This will help in building trust and network with the vulnerable families.</li>
+                        <li><strong>Financial Counsellors:</strong> Such individuals offer advice to families / individuals on the notion of budgeting and debt management. Financial literacy sessions can be hosted at ECE centers for parents.</li>
+                        <li><strong>Anglicare:</strong> This institution offers comprehensive family support services. Joint programs can be developed that might focus on parental wellbeing.</li>
+                    </ul>
+                </div>
+
+                <!-- Resources for Educators & Children -->
+                <div class="section-card">
+                    <h3 class="content-heading">Resources for Educators & Children</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                        <li><strong>Projects:</strong> The Smith Family Learning for Life Program, Raising Children Network, Save the Children Australia, AIFS.</li>
+                        <li><strong>Children’s Storybooks:</strong> Too Many Toys, The Patchwork Bike, Belonging, Family Family</li>
+                        <li><strong>Children’s Videos/Podcasts:</strong> ABC Kids, Sesame Street, ABC Kids Early Education Helping hands Toolkit, Circle of Security International</li>
+                    </ul>
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-200 mt-4">
+                        <p class="text-sm text-gray-700 italic">
+                            The projects can be used by the educators for referring the eligible families and their ECE resources can be used for home learning. The articles from these projects can be shared with the parents so as to bring some positivity in their lives. The educators can also use the resources in these projects for their own understanding and for improving their curriculum. The story books can be used by educators to have a healthy discussion with children about different values like sharing and contentment. These stories can also help in encouraging imaginative play amongst the children. Lastly the stories can be used as moral lessons to teach the children about love and support and their importance when compared to money. The videos and the podcasts can be shown to children as well as their families so as to encourage quality interaction at home. These videos can also help in normalizing different living conditions in different families so that the children do not feel that they are different from the other children. Lastly the educators can use these resources to teach the parents about the ways in which they can strengthen attachment with their children despite facing some stress.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: Social Context | Out-Of-Home Care (OOHC) -->
+        <section id="content-tab2" class="tab-content hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-accent-color pb-2">TAB 2: Social Context | Out-Of-Home Care (OOHC)</h2>
+            <!-- Image for Tab 2: OOHC -->
+            <img src="https://kidscarehomehealth.com/wp-content/uploads/2023/06/KCHH-high-five.jpg" alt="Image representing children in foster/kinship care with supportive environments" class="w-full h-auto object-cover rounded-lg mb-6 shadow-md border-2 border-green-200">
+            <!-- End Image -->
+
+            <div class="space-y-6">
+                <!-- Understanding the context -->
+                <div class="section-card">
+                    <h3 class="content-heading">Understanding the context</h3>
+                    <p class="text-gray-700 mb-4">This refers to any kind of living arrangement especially for children who are unable to live safely at their homes. This can include but is not just limited to foster care, kinship care and/or residential care.</p>
+                    <p class="text-gray-700 mb-4">ECE helps in providing stability, and positive adults relationships to children who have been subjected to multiple transitions throughout their younger years. ECE helps in filling the gap for such children.</p>
+                    <p class="text-gray-700 mb-2">The Sociological Theories related to this social context are <strong>“Ecological Systems Theory by Bronfenbrenner”</strong> [Image of Ecological Systems Theory by Bronfenbrenner] and <strong>“Attachment Theory by Bowlby”</strong>. The former theory states that OOHC disrupts the microsystem i.e. the family and more than often the mesosystem (linking the family and ECE) for such children. ECE tries to rebuild the microsystem for children by being the stable microsystem for such children. The latter theory suggests that, Children in OOHC may develop signs of disorganized attachment owing to the trauma that they face. This can impact their trusting capabilities later in their lives. (Grace, Bowes, & Woodrow, 2022)</p>
+                    <p class="text-sm italic text-gray-500 mt-4">As of 2020, over 46,000 children were in OOHC across Australia. The First Nations Children are heavily over-represented. (SNAICC, 2025)</p>
+                </div>
+
+                <!-- Impact on Children & Families -->
+                <div class="section-card">
+                    <h3 class="content-heading">Impact on Children & Families</h3>
+                    <p class="text-gray-700 mb-4">Children subjected to OOHC can develop emotional regulation issues. Their trauma responses can come out as behavioral challenges while in ECE. Children might also develop loss of identity and find it hard to develop strong relations with caregivers.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>The educators must focus on such children with care and empathy. Their child care plan should be well studied with other caseworkers.</li>
+                        <li>Privacy and confidentiality should be maintained at all stages.</li>
+                    </ul>
+                </div>
+
+                <!-- Social Policy & Australian Responses -->
+                <div class="section-card">
+                    <h3 class="content-heading">Social Policy & Australian Responses</h3>
+                    <p class="text-gray-700 mb-4">The National Framework for Protecting Australia’s Children is the main strategy by the Australian Government. It aims at protecting the children at their homes and providing early intervention if needed.</p>
+                    <p class="text-gray-700 mb-2">The over representation of children from the First Nations remains the top goal. This gap is to be eliminated by the year 2040. (Grace, Bowes, & Woodrow, 2022)</p>
+                </div>
+
+                <!-- Strategies for Practice -->
+                <div class="section-card">
+                    <h3 class="content-heading">Strategies for Practice</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Trauma-Informed Practice:</strong> Child’s safety and choice should be prioritized.</li>
+                        <li><strong>Transition Support:</strong> ECE routine’s stability must be ensured even during transitions.</li>
+                        <li><strong>Kinship Care Support:</strong> Kinship carers are often seen facing challenges. Such carers should be treated with empathy and understanding. Support should be provided to them.</li>
+                        <li><strong>Cultural Support Plan:</strong> For First Nations children, the ECE service must ensure that the children remain connected to their roots and culture.</li>
+                        <li><strong>Consistency:</strong> The child’s routine should remain consistent so that the child regains a sense of control over their lives.</li>
+                    </ul>
+                </div>
+
+                <!-- Community & Professional Partnerships -->
+                <div class="section-card">
+                    <h3 class="content-heading">Community & Professional Partnerships</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>State Child Protection:</strong> This institution is help responsible for the care and planning of children. The educators must communicate on a regular basis with their caseworker about their needs and progress.</li>
+                        <li><strong>Foster care Agencies:</strong> These agencies recruit, train and support foster carers. The staff from such agencies must be called to ECE centers to teach educators about OOHC principles.</li>
+                        <li><strong>SNAICC:</strong> This is the leading body for first nations children and their families. Educators must use resources and training material from such institutions to ensure that the children remain etched with their culture and roots.</li>
+                        <li><strong>CAMHS:</strong> This institution provides therapeutic support. Educators should consult with CAMHS professional to understand the child’s traumas better.</li>
+                        <li><strong>Therapists:</strong> Private / funded providers often work directly with the children. The educators must share non-confidential observations about the child upon the carer’s approval with the therapist to plan their plan better.</li>
+                    </ul>
+                </div>
+
+                <!-- Resources for Educators & Children -->
+                <div class="section-card">
+                    <h3 class="content-heading">Resources for Educators & Children</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                        <li><strong>Projects:</strong> Berry Street Education Model, Child Wise, Emerging Minds Community Trauma Toolkit, Australian Childhood Foundation</li>
+                        <li><strong>Children’s Storybooks:</strong> The Invisible String, A hand to hold, The koala who could, All kinds of feelings.</li>
+                        <li><strong>Children’s Videos/Podcasts:</strong> Mr. Roger’s Neighborhood, ABC Kids, Calm Kids Podcast,Braveheart’s Ditto Program </li>
+                    </ul>
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-200 mt-4">
+                        <p class="text-sm text-gray-700 italic">
+                            The projects can be used by educators so that they can adapt the strategies shown in the projects for self-regulation and de-escalation resources present in these projects and programs can be also used for the audit of ECE centers child safety standards as compared to the suggested standards. Some of these resources can also help the educators in learning about how trauma effects the brains and behaviors of young children and how the educators can deal with such children. This not only helps the educators learn more about the context but can also help them in professional development. These storybooks can be used by educators in a lot of ways. They can use these stories to make children understand that love remains despite distance. Through the use of these stories they can also normalize that caregiving can also be done outside the home and it is a normal procedure in some cases. Big feelings which are difficult for the child to comprehend can be easily taught to them through the use of these stories. The videos and the podcasts can help the children by reassuring them that they are safe despite of all that they have been going through. Important lessons of personal safety and individual rights can also be taught through the help of these videos and podcasts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: Cultural & Diversity | First Nations Families -->
+        <section id="content-tab3" class="tab-content hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-accent-color pb-2">TAB 3: Cultural & Diversity | First Nations Families</h2>
+            <!-- Image for Tab 3: First Nations -->
+            <img src="https://live-production.wcms.abc-cdn.net.au/7be4fd8e649ce173b20534764e813f4d?impolicy=wcms_crop_resize&cropH=897&cropW=1344&xPos=1&yPos=0&width=862&height=575" alt="Image representing First Nations culture, colors, and connection to land" class="w-full h-auto object-cover rounded-lg mb-6 shadow-md border-2 border-orange-200">
+            <!-- End Image -->
+
+            <div class="space-y-6">
+                <!-- Understanding the context -->
+                <div class="section-card">
+                    <h3 class="content-heading">Understanding the context</h3>
+                    <p class="text-gray-700 mb-4">This context includes families that are aboriginal in nature or Torris Stare Islander families who are framed by historical trauma. These families are often found to face systematic disadvantage. ECE services are very important to make sure that these families and children coming from these families feel culturally safe and their identity is also maintained. ECE educators play a vital role in supporting the well-being of the children of first nation families.</p>
+                    <p class="text-gray-700 mb-2">The sociological theories related to this context are <strong>Post-Colonial Theory</strong> and <strong>Cultural Safety Theory</strong>. The former theory examines the impacts of colonization on the minds of the people and how their colonization has led them to face racism and disadvantage as compared to other families (Baxter, 2016). The latter theory of cultural safety suggests that ECE educators apart from being sensitive to children coming from such families should also try to analyze how they can change their practices to remove the barriers and disadvantages that children coming from first nation’s families have to face in their day-to-day lives. (Grace, Bowes, & Woodrow, 2022)</p>
+                    <p class="text-gray-700 mb-2"></p>
+                </div>
+
+                <!-- Impact on Children & Families -->
+                <div class="section-card">
+                    <h3 class="content-heading">Impact on Children & Families</h3>
+                    <p class="text-gray-700 mb-4">The children coming from first nations, families suffer a high risk of development, vulnerability and the main reason for them suffering developmental vulnerability is deeply rooted in social determinant and not that own culture. The children can also suffer from identity confusion. It is often found that parents who themselves are first nations, citizens develop distress of non-indigenous institutions because of the past trauma that they have been subjected to.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>It therefore becomes the responsibility of the educators to make sure that the children do not suffer from any kind of identity confusion and they are felt safe in the ECE settings.</li>
+                        <li>First nations staff should be appointed in ECE centers and in local community centers, and it should also be insured that the practice is aligned with AICPP.</li>
+                    </ul>
+                </div>
+
+                <!-- Social Policy & Australian Responses -->
+                <div class="section-card">
+                    <h3 class="content-heading">Social Policy & Australian Responses</h3>
+                    <p class="text-gray-700 mb-4">The key policies by the Australian government in this context includes <strong>National Agreement on Closing the Gap</strong> and <strong>National Quality Standard Element 6.2.3</strong>. Both of these policies work towards the upliftment of the first nations, families and their children.</p>
+                    <p class="text-gray-700 mb-2">Focus should be laid on the funding of ACCO’s so that children coming from aboriginal communities, lead good early years of their lives.</p>
+                    <p class="text-sm italic text-gray-500 mt-4">As per data. It has been noted that children coming from first nation families at 10.8 times more likely to be in out of home care.</p>
+                </div>
+
+                <!-- Strategies for Practice -->
+                <div class="section-card">
+                    <h3 class="content-heading">Strategies for Practice</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Cultural protocols:</strong> The local protocols of the communities should be known and practiced by the educators.</li>
+                        <li><strong>Embed Aboriginal pedagogy:</strong> It is suggested that educators must use the eight ways of aboriginal learning framework, and the curriculum design should be based upon that.</li>
+                        <li><strong>Active recruitment of first nation staff:</strong> The workforce in ECE centers must reflect community and cultural mentorship, which can only be achieved by recruitment of people from first nations.</li>
+                        <li><strong>Resource mapping:</strong> The ECE centers must identify and invite elders or willing members of the first nation families who can come and share their knowledge and their stories about their own cultures.</li>
+                        <li><strong>Anti bias curriculum in ECE centers:</strong> stereotypes should be actively challenged, and the first nation people should be included in all the activities and resources of the center.</li>
+                    </ul>
+                </div>
+
+                <!-- Community & Professional Partnerships -->
+                <div class="section-card">
+                    <h3 class="content-heading">Community & Professional Partnerships</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>SNAICC:</strong> It is a national body in Australia. The educators can use resources and advocacy tools provided by SNAICC to deal with children and families from first nations better.</li>
+                        <li><strong>LALC:</strong> This institution serves as a guardian of country and local knowledge. The educators can consult them to improve their curriculum content so as to adjust local history better in their curriculum.</li>
+                        <li><strong>ACCHO:</strong> This institution works for providing culturally safe healthcare to all the people. The educators can help first nation families get in touch with ACCHO for their regular health checks and any early intervention if needed.</li>
+                        <li><strong>Local elders or community members:</strong> We can find such people all around who try to act as an as a custodian of culture and knowledge. The ECE centers can hire such local elders or willing community members who can come at ECE centers and share their experience and knowledge about the culture with the students as well as the educators.</li>
+                        <li><strong>ACFS:</strong> This institution works for providing family support and early year programs to 1st nation families. The educators can help by developing formal referral pathways, with the ACFS. (Grace, Bowes, & Woodrow, 2022)</li>
+                    </ul>
+                </div>
+
+                <!-- Resources for Educators & Children -->
+                <div class="section-card">
+                    <h3 class="content-heading">Resources for Educators & Children</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                        <li><strong>Projects/Programs:</strong> SNAICC Family Matters Resources, Welcome to Country, First Languages Australia, Narragunnawali.</li>
+                        <li><strong>Children’s Storybooks:</strong> Welcome to Country, Shapes of Australia, Family, The Rainbow Serpent.</li>
+                        <li><strong>Children’s Videos:</strong> Little J and Big Cuz, Play School Indigenous Australian episodes, Yolngu Boy, ABC Kids Indigenous Resources.</li>
+                    </ul>
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-200 mt-4">
+                        <p class="text-sm text-gray-700 italic">
+                            The projects can be used by educators in order to educate and inform themselves about these systematic issues related to First Nations families and the possible solutions for them. They can also make use of these resources to improve community engagement. Certain websites can also be used by educators in order to learn about the commonly used phrases or words from local language groups and also make the children aware of these commonly used words in order to increase diversity and connection amongst the children. The ECE Centre can also build their own RAP keeping the resources in these projects as their base. These stories can help the educators to start a discussion with children about their countries and learn about art related concepts through a cultural lens. These stories can also act as a tool for inclusive representation of children coming from First Nation families. And as it is known that there is no better form of representation for a community or a land then stories coming from these communities and these lands. The videos and the podcasts can be a live and real example for the children to know more about the lives of First Nation families and their cultures. Their representation on screen can help in normalizing their lives and cultures for the larger folks. It also becomes a source of information and education for people from other communities to know more about the First Nation families and the issues that they have been going through since long time. The children will also build a confidence by seeing that what their lives are is not something to be ashamed of.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: Health & Wellbeing | Parental Mental Illness -->
+        <section id="content-tab4" class="tab-content hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-accent-color pb-2">TAB 4: Health & Wellbeing | Parental Mental Illness</h2>
+            <!-- Image for Tab 4: Parental Mental Illness -->
+            <img src="https://www.mghclaycenter.org/assets/parents-untreated-mental-illness-affects-their-children.jpg" alt="Image representing mental health support and secure parent-child relationships" class="w-full h-auto object-cover rounded-lg mb-6 shadow-md border-2 border-purple-200">
+            <!-- End Image -->
+
+            <div class="space-y-6">
+                <!-- Understanding the context -->
+                <div class="section-card">
+                    <h3 class="content-heading">Understanding the context</h3>
+                    <p class="text-gray-700 mb-4">This context basically focuses on children who live in families with their adults or parents or their primary caregiver is currently suffering from a mental health issue such as depression, anxiety, bipolar disorder or any such mental disorder. ECE plays a very important role in the detection of such children, who come from families with mental health issues. The educators play a very important role in providing a safe and stable environment to such children who do not get safe environments in their families. (Angel, 2019)</p>
+                    <p class="text-gray-700 mb-2">The major sociological theories associated with this context are the <strong>Attachment Theory</strong> [Image of Attachment Theory working model] and <strong>Adverse Childhood Experiences (ACEs)</strong>. The former theory suggests that the mental illness of the parent deeply affects their capability to be consistently available for the child. This affects the attachment of the child and the child can develop attachment issues. The latter theory suggests that the mental illness of the parent is counted as adverse childhood experience and it can also increase the risk of health issues and development issues in the long run for the child. It has also been noted from data that mental health issues in parents are one of the many risk factors of child neglect. (Grace, Bowes, & Woodrow, 2022)</p>
+                </div>
+
+                <!-- Impact on Children & Families -->
+                <div class="section-card">
+                    <h3 class="content-heading">Impact on Children & Families</h3>
+                    <p class="text-gray-700 mb-4">Children having ill parents at home may show different kind of regressive behaviors. These children can also suffer anxiety or suffer with emotional regulation. It has also been found that such children take a parent affied roles at a very early age in their lives. Children might also feel guilty about their parents’ conditions, taking all the blame on them.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>A set of siblings can have different coping mechanisms, so it becomes the responsibility of the educator to focus on such children in a more empathetic manner.</li>
+                        <li>The confidentiality of the parents and the family must also be maintained.</li>
+                    </ul>
+                </div>
+
+                <!-- Social Policy & Australian Responses -->
+                <div class="section-card">
+                    <h3 class="content-heading">Social Policy & Australian Responses</h3>
+                    <p class="text-gray-700 mb-4">The key policy by the government of Australia includes <strong>National Children’s Mental Health and Well-being Strategy</strong>. This is a strategy that is specifically for children from the age group of 0 to 12 years and the families of these children. The main focus is on prevention and early intervention.</p>
+                    <p class="text-gray-700 mb-2">It has been observed that almost half of the adult mental health challenges emerge in an individual even before the age of 14 and it has also been found that adults restrain themselves from receiving any kind of professional help due to stigma around mental health issues, we should work towards acknowledging the need for greater support in ECE centers. The educators can play a big role in providing support and identifying cases of illness before they become a bigger problem. (Grace, Bowes, & Woodrow, 2022)</p>
+                </div>
+
+                <!-- Strategies for Practice -->
+                <div class="section-card">
+                    <h3 class="content-heading">Strategies for Practice</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Focus on secure attachment:</strong> The educator must ensure that the child is greeted with a warm environment. This makes sure that the child feels safe if the environment at home is not such.</li>
+                        <li><strong>Psycho education:</strong> The educator must use very simple language to understand the feelings of the child and they must also ensure that the child understands that the illness of their parents is not the child’s fault.</li>
+                        <li><strong>Nonjudgemental parent support:</strong> Educators must make sure that they provide support to parents and offer them flexible communication methods.</li>
+                        <li><strong>Emotional literacy program:</strong> Educators must make sure that the child is aware that the feelings that they are feeling at the moment are valid, and they do not have to worry much about them.</li>
+                        <li><strong>Referral to specialist services:</strong> The educators can use resources like emerging minds.</li>
+                    </ul>
+                </div>
+
+                <!-- Community & Professional Partnerships -->
+                <div class="section-card">
+                    <h3 class="content-heading">Community & Professional Partnerships</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Emerging Minds:</strong> It is an organization that focuses on the mental health of children, and it also focuses on the mental health of children that are affected by the illness of their parents. Educators can use their online training material and their resources to guide the service.</li>
+                        <li><strong>General practitioners:</strong> These are the key medical contacts for people of all age groups, including children upon the consent of the parent. The educator can collaborate with these practitioners to support the child’s overall development.</li>
+                        <li><strong>PANDA:</strong> It is a specialized support group for people who are expecting children soon or for new parents. Educators can refer parents who show sign of distress to panda’s resources. This can help the parents to cope up with their changed situations, better and their children as well.</li>
+                        <li><strong>Beyond blue:</strong> It refers to the mental health support services provided in Australia. Educators must have information ready with them for affected parents and families.</li>
+                        <li><strong>Child safety services:</strong> These are government funded agencies for protection of children. Educators must have access to these agencies numbers so that they can report case of neglect from the parents side. If the child is unsafe.</li>
+                    </ul>
+                </div>
+
+                <!-- Resources for Educators & Children -->
+                <div class="section-card">
+                    <h3 class="content-heading">Resources for Educators & Children</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                        <li><strong>Projects / Programs:</strong> Emerging Minds Website/Toolkit, Kids helpline, COPMI, Cool Kids Anxiety Program.</li>
+                        <li><strong>Children’s Storybooks:</strong> The colour Monster, My Big Moments, The Cloud, Ow Babies.</li>
+                        <li><strong>Children’s Videos / Podcasts:</strong> Smiling Mind App,Play School Episodes on Emotions, <a href ="https://www.youtube.com/@SesameStreet" target ="_blank" class="text-blue-600 hover:text-blue-800 break-all">Sesame Street </a>, Kids Health Minute.</li>
+                    </ul>
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-200 mt-4">
+                        <p class="text-sm text-gray-700 italic">
+                            The projects can be used by educators as a source of professional learning for all the staff employed at the ECE Center. Resources from these projects can also be used to educate the staff about the mental illness that the parents might suffer and also help children in understanding the nuances of the mental illness that their parents are suffering from. Simple CBT technique scan also be used by educators and other staff members of the ECE Centre through the help of these projects. There is no better way to learn emotional illiteracy then stories and it goes the same for both the educators as well as the children. Some of these stories like my big moments can be used by educators in order to make feelings like anxiety validated for the children and can also help with providing simple coping strategies to the children. Educators can also use these stories to make the children understand that secure attachment still exists even when they feel that things are uncertain at the moment. Lastly the videos and the podcasts can be used by educators to calm down the children and start conversations with them about feeling sad or worried. The characters in this in these videos can also be used by the educators to model healthy coping.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: Crisis & Emergency | Natural Disasters -->
+        <section id="content-tab5" class="tab-content hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-accent-color pb-2">TAB 5: Crisis & Emergency | Natural Disasters</h2>
+            <!-- Image for Tab 5: Natural Disasters -->
+            <img src="https://images.sbs.com.au/dims4/default/1e98da9/2147483647/strip/true/crop/450x253+0+42/resize/1280x720!/quality/90/?url=http%3A%2F%2Fsbs-au-brightspot.s3.amazonaws.com%2Fdrupal%2Fnews%2Fpublic%2Fimages%2Fs%2Fi%2Fsite_1_rand_822895693_black_saturday_large.jpg" alt="Image representing natural disaster recovery, like floods or bushfires" class="w-full h-auto object-cover rounded-lg mb-6 shadow-md border-2 border-cyan-200">
+            <!-- End Image -->
+
+            <div class="space-y-6">
+                <!-- Understanding the context -->
+                <div class="section-card">
+                    <h3 class="content-heading">Understanding the context</h3>
+                    <p class="text-gray-700 mb-4">This usually includes families who have been hit hard by the long and short-term impacts of natural disasters of any sort. Natural disasters may include bushfires, floods, cyclones etc. which are very common in Australian sub-continent.</p>
+                    <p class="text-gray-700 mb-4">The ECE plays a vital role during and immediately after such disasters. They help the children in feeling a sense of safety and normalcy after such incidents. They also play a vital role by becoming community anchors.</p>
+                    <p class="text-gray-700 mb-2">The sociological theories related to this context are <strong>“Resilience Theory”</strong>  and <strong>“Social Capital Theory”</strong>. The former theory suggests that focus should be laid on protective factors like agency, routine etc. after such incidents. This not only helps the families cope with the situation better but also helps them to recover from the associated trauma in a better way. ECE helps in the fostering of these factors. On the other hand, the latter theory suggests that natural disasters like these actually test the social networks of the community. ECE proves very helpful in the rebuilding and strengthening of these community bonds. (Grace, Bowes, & Woodrow, 2022)</p>
+                    <p class="text-gray-700 mb-2">Disasters leave a disproportionate effect on communities based on several factors like socio-economic status, health status, etc.</p>
+                </div>
+
+                <!-- Impact on Children & Families -->
+                <div class="section-card">
+                    <h3 class="content-heading">Impact on Children & Families</h3>
+                    <p class="text-gray-700 mb-4">Trauma from disasters can impact families and children in so many ways and manners. Children can suffer from anxiety, sleep problems and/or aggressive behavior post incidents. (Relationships Australia, 2018) Learning and concentration can also be impacted deeply.</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>The adults in the family may suffer stress due to potential loss of belongings, livelihood means. The behavior of the adults too impacts the children.</li>
+                        <li>The ECE centers may have to operate at a reduced capacity or may have to shut down during such times.</li>
+                    </ul>
+                </div>
+
+                <!-- Social Policy & Australian Responses -->
+                <div class="section-card">
+                    <h3 class="content-heading">Social Policy & Australian Responses</h3>
+                    <p class="text-gray-700 mb-4">The key policies implemented by the Australian Government include <strong>CSS Emergency Support</strong> and <strong>Australian Disaster Relief Fund / payments</strong>. Both of these policies aim at helping the people with flexibility in CSS during emergencies and with financial help respectively.</p>
+                    <p class="text-gray-700 mb-2">There should be a consistent, national framework for supporting the children and youngsters during the times of disasters. We should not rely solely on ad-hoc disaster management plans and / or post-disaster measures that are taken on the spot.</p>
+                </div>
+
+                <!-- Strategies for Practice -->
+                <div class="section-card">
+                    <h3 class="content-heading">Strategies for Practice</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Disaster Preparedness:</strong> To make children aware about what steps to take in emergency situations, they should be made to participate in age-appropriate activities that can teach them how to build emergency sacks etc.</li>
+                        <li><strong>Play-Based Processing:</strong> Children can be taught through play way methods how to keep themselves safe during times of disaster or any untoward incidents.</li>
+                        <li><strong>Restoration of Routine:</strong> The educators and parents must try and re-implement predictable schedules. This can help the child feel safe.</li>
+                        <li><strong>Model Calmness:</strong> Children try to mimic the behavior of the adults around them. Hence, the adults should try to stay calm as much as possible.</li>
+                        <li><strong>Repetitive Reassurance:</strong> Children should be reassured that they are safe and that their feelings are normal and valid.</li>
+                    </ul>
+                </div>
+
+                <!-- Community & Professional Partnerships -->
+                <div class="section-card">
+                    <h3 class="content-heading">Community & Professional Partnerships</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Australian red Cross:</strong> This institution provides support during emergency situation. The educators can collaborate with them to teach the children about emergency safety plans based on their age and intelligence levels.</li>
+                        <li><strong>EMA:</strong> This institution helps in establishing coordination and preparedness during times of emergency. The educators must use their resources to remain educated about the expected behaviors during such times of need.</li>
+                        <li><strong>UNICEF Australia:</strong> This institution supports child-focused disaster recovery plans. The educators must use their resources to remain educated about the expected behaviors during such times of need.</li>
+                        <li><strong>Local Government:</strong> The local hubs and community grants are managed by them. The educators can help the affected families connect with these local agencies.</li>
+                        <li><strong>Therapists:</strong> Private / funded providers often work directly with the children. The educators must share non-confidential observations about the child upon the carer’s approval with the therapist to plan their plan better. (Grace, Bowes, & Woodrow, 2022)</li>
+                    </ul>
+                </div>
+
+                <!-- Resources for Educators & Children -->
+                <div class="section-card">
+                    <h3 class="content-heading">Resources for Educators & Children</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                        <li><strong>Projects / Programs:</strong> Birdie’s Tree, Emerging Minds Community Trauma Toolkit, AIDR.</li>
+                        <li><strong>Children’s Storybooks:</strong> Trinka and Sam, Hello House, The Pout-Pout Fish, The Colour Monster</li>
+                        <li><strong>Children’s Videos / Podcasts:</strong> <a href="https://youtu.be/qLugW3FDHQo" target ="_blank" class="text-blue-600 hover:text-blue-800 break-all" >Play School</a>, <a href="https://youtu.be/I-kVNLie5GY?list=RDI-kVNLie5GY" target ="_blank" class="text-blue-600 hover:text-blue-800 break-all" >>Birdie’s Tree Videos</a>, <a href="https://youtu.be/e8u6AdAEjHE" target ="_blank" class="text-blue-600 hover:text-blue-800 break-all" >The Big Feelings Video (Red Cross)</a>, <a href="https://youtu.be/BHRaf-HK9_M" target ="_blank" class="text-blue-600 hover:text-blue-800 break-all">Triple Zero Kids’ Challenge</a> </li>
+                    </ul>
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-200 mt-4">
+                        <p class="text-sm text-gray-700 italic">
+                            These projects and programs cover story books and games in order to help the young children recover from disasters. The educators can read stories from these resources to help the children recover from post disaster trauma. The educators and can also make the use of online games. Some of these resources even have fact sheets that can be shared by the educators with the families That are affected by trauma to educate them About the post trauma reactions which are normal and. Audios or video programs from these resources can also be inculcated in the ECE curriculum so that both the educators and the children have a brief idea of what’s coming if things go wrong. The story books cover a range of topics starting from ways to cope after a natural event has occurred and what steps should be taken while a natural disaster or a calamity is still in progress. These story books can be used by the educators to teach the children about safety plans, What feelings can they expect to feel during the disaster so that these feelings are not new to them in case any untoward incident happens. These stories can also help children develop empathy and name the feelings that they might have to go through. Lastly the videos or podcasts can be used by the educators for dramatic play so that they can reduce the feeling of fear in children to some extent. These videos can also be used as a focused group time resource for the children and provide them with coping ideas in case any natural disaster or calamity occurs. The children can be taught about personal safety through interactive play with the help of these videos and podcasts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 6: References -->
+        <section id="content-tab6" class="tab-content hidden">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-accent-color pb-2">TAB 6: References</h2>
+            <!-- References tab does not require an image -->
+
+            <div class="space-y-4">
+                <div class="section-card">
+                    <h3 class="content-heading">References</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-3">
+                        <li>Angel, M. (2019). Supporting the wellbeing of parents and carers.</li>
+                        <li>Baxter, J. (2016). The modern Australian family (Facts sheet). Australian Institute of Family Studies. <a href="https://aifs.gov.au/research/research-snapshots/modern-australian-family" target="_blank" class="text-blue-600 hover:text-blue-800 break-all">https://aifs.gov.au/research/research-snapshots/modern-australian-family</a></li>
+                        <li>Contact, C. P. A. H. C. a. 2. (2024, February 28). Chapter 4 - Child poverty. <a href="https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Community_Affairs/PovertyinAustralia/The_extent_and_nature_of_poverty_in_Australia/Chapter_4_-_Child_poverty#:~:text=4.4Save%20the%20Children%20and,child%20in%20Australia%20should%20expect." target="_blank" class="text-blue-600 hover:text-blue-800 break-all">https://www.aph.gov.au/Parliamentary_Business/committees/Senate/Community_Affairs/PovertyinAustralia/The_extent_and_nature_of_poverty_in_Australia/Chapter_4_-_Child_poverty#:~:text=4.4Save%20the%20Children%20and,child%20in%20Australia%20should%20expect.</a></li>
+                        <li>Grace, R., Bowes, J., & Woodrow, C. (2022). Child protection and out-of-home care. In Children, families and communities (6th ed.). Oxford University Press Australia & New Zealand.</li>
+                        <li>Grace, R., Bowes, J., & Woodrow, C. (2022). Child mental health. In Children, families and communities (6th ed.). Oxford University Press Australia & New Zealand.</li>
+                        <li>Grace, R., Bowes, J., & Woodrow, C. (2022). Climate change and disasters. In Children, families and communities (6th ed.). Oxford University Press Australia & New Zealand.</li>
+                        <li>Grace, R., Bowes, J., & Woodrow, C. (2022). Social inequities in Australian communities and the impact on children and families. In Children, families and communities (6th ed.). Oxford University Press Australia & New Zealand.</li>
+                        <li>Grace, R., Bowes, J., & Woodrow, C. (2022). The Stolen Generations of Aboriginal and Torres Strait Islander children: Understanding the impact of cultural hegemony in policy and intervention. In Children, families and communities (6th ed.). Oxford University Press Australia & New Zealand.</li>
+                        <li>Relationships Australia. (2018, August 1). Families and how to define them in modern society. <a href="https://www.relationships.org.au/document/june-2018-families-and-how-to-define-them-in-modern-society/" target="_blank" class="text-blue-600 hover:text-blue-800 break-all">https://www.relationships.org.au/document/june-2018-families-and-how-to-define-them-in-modern-society/</a></li>
+                        <li>SNAICC. (2025, April 29). Family Matters | National Report | SNAICC. SNAICC – National Voice for Our Children. <a href="https://www.snaicc.org.au/our-work/child-and-family-wellbeing/family-matters/" target="_blank" class="text-blue-600 hover:text-blue-800 break-all">https://www.snaicc.org.au/our-work/child-and-family-wellbeing/family-matters/</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript for Tab Switching -->
+    <script>
+        // Store the ID of the currently active tab
+        let activeTab = 'home';
+
+        /**
+         * Shows the content for the specified tab ID and updates the navigation link's active state.
+         * @param {string} tabId - The ID suffix of the content section (e.g., 'home', 'tab1').
+         */
+        function showTab(tabId) {
+            // Hide all content sections
+            document.querySelectorAll('.tab-content').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Deactivate all navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show the selected content section
+            const contentElement = document.getElementById('content-' + tabId);
+            if (contentElement) {
+                contentElement.classList.remove('hidden');
+                activeTab = tabId; // Update state
+            }
+
+            // Activate the corresponding navigation link
+            const navLinkElement = document.querySelector(`.nav-link[data-tab="${tabId}"]`);
+            if (navLinkElement) {
+                navLinkElement.classList.add('active');
+            }
+
+            // Scroll to the top of the main content area
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Add event listeners to all navigation links
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    showTab(tabId);
+                });
+            });
+
+            // Ensure the initial state is set to 'home' when the page loads
+            showTab(activeTab);
+        });
+    </script>
+</body>
+</html>
